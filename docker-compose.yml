@@ -19,4 +19,4 @@ services:
       - .:/var/www/html
 
 volumes: 
-  base_de_datos: 
+  base_de_datos:
