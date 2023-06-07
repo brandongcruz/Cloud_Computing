@@ -1,0 +1,24 @@
+#siempre se inicia con la version de docker compose que se va a utilizar 
+
+version: "3.3"
+
+#Se declaran los servicios 
+services: 
+
+#servicio NGINX: el nombre debe ser el servicio que se va a utilizar
+  nginx:
+    #Se crea la imagen del servicio
+    image: nginx:latest
+
+    #Se configuran los puertos: "host:contenedor/servicio"
+    ports:
+      - "8000:80" 
+#Se declara el servicio de PHP 
+  php: 
+  #se establece la versionn a utilizar de acuerdo a la necesidad del equipo de desarrollo 
+    image: php:8-fpm        
+
+    volumes: 
+    # <<ruta_host>>:<<ruta_contenedor>>
+      - ./src:/var/www/html
+
